@@ -1,4 +1,10 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# 実践htmx入門
+
+2025-02-28に開催された [Shima Tech Hub#9](https://shima-tech-hub.connpass.com/event/344910/) での発表スライドです。
+
+[Slidev](https://github.com/slidevjs/slidev) をつかっています
+
+# 実行方法
 
 To start the slide show:
 
