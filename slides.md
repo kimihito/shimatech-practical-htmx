@@ -199,3 +199,18 @@ Content-Type: text/html
 - **アトリビュートベース**で直感的
 - **他のJSライブラリとの組み合わせ**で表現力UP
 - **HX-*ヘッダー**でサーバーからクライアントを制御
+
+<div class="mb-10"></div>
+
+# 参考リソース
+
+- 公式サイト: [htmx.org](https://htmx.org/)
+- ドキュメント: [htmx.org/docs](https://htmx.org/docs/)
+- GitHub: [github.com/bigskysoftware/htmx](https://github.com/bigskysoftware/htmx)
+
+---
+layout: cover
+---
+
+# おしまい
+ご清聴ありがとうございました
