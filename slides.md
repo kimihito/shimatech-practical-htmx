@@ -33,9 +33,31 @@ The last comment block of each slide will be treated as slide notes. It will be 
 # 自己紹介
 
 - @kimihito
-- 株式会社ミノタケ
+- 株式会社ミノタケ (4月で12周年)
 - https://x.com/kimihito_
 - https://github.com/kimihito
+
+* 好きなもの:
+  * （今どきじゃない）フルスタックWebフレームワーク
+    * Django (+ Alpine.js, htmx )
+    * Rails (+ Hotwire)
+    * Phoenix (+ Phoenix Liveview)
+---
+class: text-center
+layout: cover
+---
+
+# AIの話しません
+# Gammaもつかってません
+
+---
+class: text-center
+layout: cover
+---
+
+# htmxの話をしにきました
+
+興味ないならまだご飯残っています、ご歓談ください
 
 ---
 class: text-center
@@ -62,9 +84,9 @@ layout: cover
 # htmxの基本コンセプト
 
 ```html
-<button hx-post="/clicked" 
-        hx-trigger="click" 
-        hx-target="#result" 
+<button hx-post="/clicked"
+        hx-trigger="click"
+        hx-target="#result"
         hx-swap="outerHTML">
   クリックしてください
 </button>
@@ -97,10 +119,10 @@ layout: cover
       hx-indicator="#spinner"
       @htmx:before-request="submitting = true"
       @htmx:after-request="submitting = false">
-  
+
   <input type="text" name="username" required>
-  
-  <button type="submit" 
+
+  <button type="submit"
           :disabled="submitting"
           x-text="submitting ? '送信中...' : '送信する'">
   </button>
@@ -121,14 +143,14 @@ layout: cover
 
 ```html
 <!-- 入力が止まって300ms経過後にリクエスト -->
-<input type="text" 
-       name="search" 
-       hx-get="/search" 
-       hx-trigger="keyup delay:300ms" 
+<input type="text"
+       name="search"
+       hx-get="/search"
+       hx-trigger="keyup delay:300ms"
        hx-target="#search-results">
 
 <!-- 最大でも2秒に1回だけリクエスト -->
-<div hx-get="/api/status" 
+<div hx-get="/api/status"
      hx-trigger="every 2s throttle:2000ms">
   ステータス更新中...
 </div>
@@ -146,27 +168,27 @@ layout: two-cols-header
 ::left::
 
 ```html
-<div 
+<div
   x-data="{ messages: [] }"
   @showMessage.window="
     this.messages.push({
-      text: $event.detail.value, 
+      text: $event.detail.value,
       time: new Date()
     })
   ">
-     
+
   <div class="notifications">
     <template x-for="msg in messages" :key="msg.time">
       <div class="toast" x-text="msg.text"></div>
     </template>
   </div>
-  
-  <div hx-get="/api/notifications" 
+
+  <div hx-get="/api/notifications"
        hx-trigger="every 10s"
        hx-target="#notification-area">
     最新のお知らせ
   </div>
-  
+
   <div id="notification-area"></div>
 </div>
 ```
@@ -214,3 +236,35 @@ layout: cover
 
 # おしまい
 ご清聴ありがとうございました
+
+---
+layout: cover
+---
+
+あまったら余談
+
+---
+---
+
+# Node.prototype.moveBefore() がおもしろい！！！
+
+htmxの作者やReact、Angularが推進していたAPI
+
+https://github.com/whatwg/dom/issues/1255
+
+https://htmx.org/examples/move-before/
+
+Chrome 133（今月リリース）で有効になってます
+
+---
+---
+
+# The future of htmx というエッセイがおもしろい
+
+https://htmx.org/essays/future/
+
+* 次のjQueryをめざす
+* 安定こそ機能である
+* 機能追加はしない
+
+などなど。おもしろいです
